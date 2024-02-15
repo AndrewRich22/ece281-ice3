@@ -59,15 +59,24 @@ architecture test_bench of top_basys3_tb is
   -- declare the component of your top-level design unit under test (UUT)
   component top_basys3 is
       port(
-          -- TODO
+          sw(0) : in std_logic;
+          sw(1) : in std_logic;
+          sw(2) : in std_logic;
+          led(0) : out std_logic;
+          led(1) : out std_logic
       );
   end component;
   
  
 	-- declare signals needed to stimulate the UUT inputs
-	   -- TODO
+	   
 	-- finish declaring needed signals
 begin
+    w_sw <= o"0"; wait for 10 ns;
+        assert w_led = "00" report "bad 000" severity failure;
+    w_sw <= o"1"; wait for 10 ns;
+        assert w_led = "01" report "bad 001" severity failure;
+    w_sw <= 
 	-- PORT MAPS ----------------------------------------
 	-- You must create the port map for your top_basys3.
 	-- Look at your old test benches if you are unsure what to do
