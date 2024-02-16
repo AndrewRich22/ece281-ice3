@@ -25,4 +25,4 @@ Finally, the workflow **runs** the simulation. If successful then it will quietl
 If any of the `assert` statements fail **with** `severity failure` then GHDL will cease the simulation and exit with non-zero code; this will also cause the workflow to fail.
 Assert statements of other severity levels will be reported, but not fail the workflow.
 ![description of my waveform](ICE3Waveform.png)
-Documentation:
+Documentation: C/Wynn helped me fix syntax errors on the basys testbench and helped me commit my waveform screenshot. I also used to writeup from C/Mock on teams to fix the waveform.
