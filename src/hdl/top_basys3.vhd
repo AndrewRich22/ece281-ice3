@@ -70,14 +70,14 @@ end top_basys3;
 architecture top_basys3_arch of top_basys3 is 
 	
   -- declare the component of your top-level design 
-component halfAdder1 is
+component halfAdder is
       port(
           i_A     : in  std_logic; 
           i_B     : in  std_logic; 
           o_S     : out std_logic;
           o_Cout  : out std_logic
       );    
-    end component halfAdder1;
+    end component halfAdder;
   -- declare any signals you will need	
   signal w_S1 : std_logic;
   signal w_Cout1 : std_logic;
@@ -96,14 +96,14 @@ begin
         port map(
             i_A  => w_S1,
             i_B  => sw(2),
-            o_S  => led(0)
-            0_Cout  => w_Cout2
+            o_S  => led(0),
+            o_Cout  => w_Cout2
         );
 
            
 	---------------------------------
 	
 	-- CONCURRENT STATEMENTS --------
-	 led(1) <= -- TODO
+	 led(1) <= w_Cout1 or w_Cout2;-- TODO
 	---------------------------------
 end top_basys3_arch;
